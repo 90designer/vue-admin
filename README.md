@@ -1,6 +1,7 @@
 # vue-admin
 vue3.0练习
 
+2020.03.31
 1. git 仓库
     1. github创建仓库
     2. git clone <url> 将地址克隆到本地
@@ -13,4 +14,6 @@ vue3.0练习
     8. git add . 添加所有文件
     9. git pull 拉取
     10. git commit -m "XXX" 提交
+
+
 
