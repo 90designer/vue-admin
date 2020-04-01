@@ -1,24 +1,13 @@
 <template>
   <div id="login">
+    <el-page-header @back="goBack" content="详情页面"></el-page-header>
     <div class="block">
-      <span class="demonstration">默认</span>
-      <el-slider v-model="value1"></el-slider>
-    </div>
-    <div class="block">
-      <span class="demonstration">自定义初始值</span>
-      <el-slider v-model="value2"></el-slider>
-    </div>
-    <div class="block">
-      <span class="demonstration">隐藏 Tooltip</span>
-      <el-slider v-model="value3" :show-tooltip="false"></el-slider>
-    </div>
-    <div class="block">
-      <span class="demonstration">格式化 Tooltip</span>
-      <el-slider v-model="value4" :format-tooltip="formatTooltip"></el-slider>
-    </div>
-    <div class="block">
-      <span class="demonstration">禁用</span>
-      <el-slider v-model="value5" disabled></el-slider>
+      <el-carousel height="150px">
+        <el-carousel-item v-for="item in 4" :key="item">
+          <h3 class="small">{{ item }}</h3>
+          <img src="../assets/banner.png" />
+        </el-carousel-item>
+      </el-carousel>
     </div>
   </div>
 </template>
@@ -26,17 +15,14 @@
 export default {
   name: "login",
   data() {
-    return {
-      value1: 0,
-      value2: 50,
-      value3: 36,
-      value4: 48,
-      value5: 42
-    };
+    return {};
   },
   methods: {
     formatTooltip(val) {
       return val / 100;
+    },
+    goBack() {
+      alert("返回");
     }
   }
 };
@@ -47,5 +33,12 @@ export default {
   // vh 可是区域的百分比
   height: 100vh;
   background-color: #fcfcfc;
+}
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 150px;
+  margin: 0;
 }
 </style>
